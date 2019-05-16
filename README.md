@@ -1,6 +1,6 @@
 # Mongo DB
 
-Mongo is a noSQL data storage system.  It's excellent for storing poorly structured data, such as that gathered via web scrapping.  
+Mongo is a noSQL data storage system.  It's excellent for storing poorly structured data, such as that gathered via web scraping.  
 
 ## Objectives
  - Create an instance of a mongo server either in Docker or locally installed
