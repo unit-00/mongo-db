@@ -1,37 +1,9 @@
 # MongoDB
 MongoDB is a popular noSQL database.  It's loose structure makes it well suited for capturing unstructured data, such as that encountered in web scraping.  This sprint will focus on getting up and running with this system.  This is intended to be an individual sprint.
 
-## AWS MongoDB Installation
-You should already have a local Mongo docker container.  Let's practice our AWS skills by spinning up a micro instance and practice installing on a remote machine.
 
-1. To install MongoDB, use your operating system's package manager:
-   - Ubuntu Linux: `sudo apt-get install mongodb`
-
-2. Much like Postgres, you will need to launch the server before using Mongo for the first time. 
-
-   - Ubuntu Linux: `sudo /etc/init.d/mongodb start` 
-
-3. Check your installation by opening the MongoDB Client:
-
-   - Open a new terminal and type `mongo` to open up a Mongo shell
-   - Type `show dbs;` to show the databases you have
-   - You can exit by typing `exit`
-
-4. Resources and quick references to Mongo commands:
-
-   - [MongoDB Cheatsheet][mongo-cheatsheet]
-   - [Mongo Docs][mongo-docs]
-   - [MongoDB Reference Cards][mongo-ref-cards]
-
-### Mac Install (Optional)
-You don't need to install locally, however, if you prefer not to use Docker here are the Mac steps.
-1. Install Mongo:
-   - Mac OS X: `brew install mongodb`
-
-2. Launch the server (note, you'll want to not have Docker running):
-   - Mac OS X: `brew services start mongodb`
-
-
+### Using Mongo with Docker
+It is highly recommended you get used to using Docker.  See [Using Mongo with Docker](using_mongo_with_docker.md) for detailed instructions.  If you want install MongoDB see instructions at the end of the assignment.  Again this is not recommended. 
 
 
 ## Practicing Mongo Queries 
@@ -40,10 +12,10 @@ To get familiar with MongoDB, we are going to load in some click-log data from
 a government website and do some basic queries on it. Write your queries in a 
 text file. Paste and run the queries in the Mongo shell.
 
-1. In your terminal, navigate to the `data` directory in the web-scraping repository and load in the data with 
+1. Open a bash terminal in Docker, navigate to the directory containing the data in Docker and load in the data with 
    `mongoimport --db clicks --collection log < click_log.json`
 
-2. In the Mongo shell, run `show dbs;` to make sure the `clicks` database has 
+2. In the Mongo shell on Docker, run `show dbs;` to make sure the `clicks` database has 
    been created. Run `use clicks;` to use the `clicks` database for your 
    queries.
 
@@ -101,6 +73,31 @@ text file. Paste and run the queries in the Mongo shell.
     what the most popular link clicked is? You will need to use `$group`, 
     `$sum`, and `$sort`.
 
+
+## AWS MongoDB Installation
+You should already have a local Mongo docker container.  Let's practice our AWS skills by spinning up a micro instance and practice installing on a remote machine.
+
+1. To install MongoDB, use your operating system's package manager:
+   - Ubuntu Linux: `sudo apt-get install mongodb`
+
+2. Much like Postgres, you will need to launch the server before using Mongo for the first time. 
+
+   - Ubuntu Linux: `sudo /etc/init.d/mongodb start` 
+
+3. Check your installation by opening the MongoDB Client:
+
+   - Open a new terminal and type `mongo` to open up a Mongo shell
+   - Type `show dbs;` to show the databases you have
+   - You can exit by typing `exit`
+
+4. Resources and quick references to Mongo commands:
+
+   - [MongoDB Cheatsheet][mongo-cheatsheet]
+   - [Mongo Docs][mongo-docs]
+   - [MongoDB Reference Cards][mongo-ref-cards]
+
+
+
 ## Extra Credit
 
 MongoDB actually has some [geospatial][mongo-geospatial] facilities (don't 
@@ -135,3 +132,14 @@ Here are some additional GUI clients if you so want to try (my favorite is RoboM
 [mongo-geospatial]:http://docs.mongodb.org/manual/administration/indexes-geo/ 
 [New-England]:http://en.wikipedia.org/wiki/New_England
 [torque-map]:http://blog.cartodb.com/post/66687861735/torque-is-live-try-it-on-your-cartodb-maps-today
+
+
+### Mac Install (Optional)
+You don't need to install locally, however, if you prefer not to use Docker here are the Mac steps.
+1. Install Mongo:
+   - Mac OS X: `brew install mongodb`
+
+2. Launch the server (note, you'll want to not have Docker running):
+   - Mac OS X: `brew services start mongodb`
+
+
