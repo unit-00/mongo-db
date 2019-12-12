@@ -12,10 +12,10 @@ To get familiar with MongoDB, we are going to load in some click-log data from
 a government website and do some basic queries on it. Write your queries in a 
 text file. Paste and run the queries in the Mongo shell.
 
-1. Open a bash terminal in Docker, navigate to the directory containing the data in Docker and load in the data with 
+1. Open a ***bash terminal in Docker***, navigate to the directory containing the data in Docker and load in the data with (for more detailed directions [see here](using_mongo_with_docker.md))    
    `mongoimport --db clicks --collection log < click_log.json`
 
-2. In the Mongo shell on Docker, run `show dbs;` to make sure the `clicks` database has 
+2. **In the Mongo shell on Docker**, run `show dbs;` to make sure the `clicks` database has 
    been created. Run `use clicks;` to use the `clicks` database for your 
    queries.
 

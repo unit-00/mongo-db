@@ -21,8 +21,8 @@ $ docker exec -it mongoserver mongo
 Suppose you have some data in `~/path/to/data_dump/really_important.json`. Assuming you ran `docker run` from your home folder `~`, you can access the file from the container as follows:
 ```bash
 $ docker exec -it mongoserver bash
-# cd /home/data/path/to/data_dump/
-# mongoimport --db database_name --collection collection_name < really_important.json
+$ cd /home/data/path/to/data_dump/
+$ mongoimport --db database_name --collection collection_name < really_important.json
 ```
 This last command loaded the records in `really_important.json` into a collection in a database in the MongoDB server running in a docker container. 
 
